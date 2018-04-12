@@ -1,0 +1,27 @@
+{
+  "name": "hangman---constructors",
+  "version": "1.0.0",
+  "description": "Hangman game with constructors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarenBrant/Hangman---Constructors.git"
+  },
+  "keywords": [
+    "letter",
+    "word"
+  ],
+  "author": "Karen Brant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarenBrant/Hangman---Constructors/issues"
+  },
+  "homepage": "https://github.com/KarenBrant/Hangman---Constructors#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "npm": "^5.8.0"
+  }
+}

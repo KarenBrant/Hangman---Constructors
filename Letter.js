@@ -1,49 +1,57 @@
-var inquirer = require('inquirer');
-
-inquirer.prompt([
-
-    {
-      type: "input",
-      name: "guess",
-      message: "Guess a letter"
-    }
-  
-]).then(function(letter) {
-    console.log("in the function");
-    console.log(letter.guess);
-    var guess1 = letter.guess;
+// Global variables
+// var line = "__";
+// var pos = 0;
+// var newPos = 0;
+var newStr = [];
+// var arraySplit = [];
+// Letter constructor with char and boolean
+var Letter = function(charStr, boolean) {
     
-    console.log ("Letter: " + guess1);
-    var line = "__";
+    this.charStr = charStr;
+    this.boolean = boolean;
     
-    var Letter = function(wordStr, boolean) {
-        this.wordStr = wordStr;
-        this.boolean = boolean;
+    // returnLetter function returns a letter if it is in the word
+    this.returnLetter = function(charStr, boolean) {
         
-        this.returnLetter = function() {
-            if (this.boolean === true) {
-                console.log("this.wordStr: " + wordStr);
-                return this.wordStr;
-            } else {
-                console.log("line is being returned");
-                return line;
-            }
+        if (this.boolean === true) {
+            letterReturned = this.charStr;
+            return letterReturned;
+        } else {
+            console.log("Sorry but that letter is not in the word");
         }
-        this.getChar = function(char) {
-            console.log ("char: " + char);
-            console.log ("wordStr: " + wordStr);
-            if (char === wordStr) {
-                console.log("a = a");
-                this.boolean = true;;
-            } else {
-                console.log("boolean: " + boolean);
-            }
-        }
-    };    
-    var letter1 = new Letter("b", false);
-    letter1.getChar(guess1);
-    letter1.returnLetter();
-});
+    }
+    
+    // getChar function determines if the char is in the word
+    this.getChar = function(char, array, boolean) {
+        
+        // Change array object to a string
+        var result = showObjectQuery(array);
 
-// module.exports = Letter;
+        // Check to see if char is in word
+        for (var i = 0; i < result.length; i++) {
+            
+            if (char === result[i]) {
+                console.log("Char is in word");
+                boolean = true;
+            }
+        }   
+        return boolean;
+    }
+} 
+
+// Function to change object to a string
+function showObjectQuery(obj) {
+    var result = "";
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            result += obj[p];
+        }    
+    }
+    
+    var result1 = result.split("");
+    
+    return result1;
+}
+
+module.exports = Letter;
   

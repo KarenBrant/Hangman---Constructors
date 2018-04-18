@@ -7,7 +7,7 @@ var returnRes = "";
 var randomWordArray = ["awkward", "bagpipes", "banjo", "bungler", "croquet", "crypt", "dwarves", "fervid",
 "fishhook", "fjord", "gazebo", "gypsy", "haiku", "haphazard", "hyphen", "ivory", "jazzy", "jiffy", "jinx", "jukebox"]
 var computerPick = randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
-console.log(computerPick);
+// console.log(computerPick);
 
 // The user gets 20 guesses.
 var letterGuess = function() {
